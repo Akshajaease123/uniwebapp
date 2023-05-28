@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+
+
+<script>
+   
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Tests', 'Marks'],
+  [1,93],[2,94],[3,96],[4,90]
+]);
+// Set Options
+const options = {
+  title: 'Marks vs. Tests',
+  hAxis: {title: 'Tests'},
+  vAxis: {title: 'Marks'},
+  legend: 'none'
+};
+// Draw
+const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
